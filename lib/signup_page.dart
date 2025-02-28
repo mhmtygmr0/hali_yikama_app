@@ -29,8 +29,8 @@ class SignupPage extends StatelessWidget {
                   children: [
                     buildTextField("Name"),
                     buildTextField("Email"),
-                    buildTextField("Password"),
-                    buildTextField("Confirm Password"),
+                    buildTextField("Password", isPassword: true),
+                    buildTextField("Confirm Password", isPassword: true),
                     buildElevatedButton("Sign Up"),
                     buildOtherWays("Or continue with"),
                   ],
@@ -59,12 +59,13 @@ class SignupPage extends StatelessWidget {
     );
   }
 
-  Widget buildTextField(String hintText) {
+  Widget buildTextField(String hintText, {bool isPassword = false}) {
     return Padding(
       padding: const EdgeInsets.only(top: 30),
       child: SizedBox(
         width: double.infinity,
         child: TextField(
+          obscureText: isPassword,
           decoration: InputDecoration(
             hintText: hintText,
             filled: true,
