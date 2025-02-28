@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 class SignupPage extends StatelessWidget {
   SignupPage({super.key});
 
-  final Color titleColor = Color(0XFF1F41BB);
   final Color textFieldColor = Color(0XFFF1F4FF);
-  final Color buttonColor = Color(0XFF1F41BB);
+  final Color blueColor = Color(0XFF1F41BB);
   final String appleIconImage = "assets/apple_icon.png";
   final String facebookIconImage = "assets/facebook_icon.png";
   final String googleIconImage = "assets/google_icon.png";
@@ -53,7 +52,7 @@ class SignupPage extends StatelessWidget {
           fontSize: 40,
           fontWeight: FontWeight.bold,
           letterSpacing: 3.0,
-          color: titleColor,
+          color: blueColor,
         ),
       ),
     );
@@ -70,7 +69,7 @@ class SignupPage extends StatelessWidget {
             hintText: hintText,
             filled: true,
             fillColor: textFieldColor,
-            contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 15),
+            contentPadding: EdgeInsets.symmetric(vertical: 18, horizontal: 15),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),
               borderSide: BorderSide(color: Colors.transparent),
@@ -94,7 +93,7 @@ class SignupPage extends StatelessWidget {
         child: ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-            backgroundColor: buttonColor,
+            backgroundColor: blueColor,
             minimumSize: Size(double.infinity, 60),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
@@ -123,7 +122,7 @@ class SignupPage extends StatelessWidget {
             text,
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: titleColor,
+              color: blueColor,
               fontSize: 14,
               fontWeight: FontWeight.bold,
             ),
@@ -151,7 +150,7 @@ class SignupPage extends StatelessWidget {
         color: Colors.grey[300],
         borderRadius: BorderRadius.circular(8),
       ),
-      child: Image.asset(imagePath, width: 35, height: 30),
+      child: Image.asset(imagePath, width: 45, height: 35),
     );
   }
 }
