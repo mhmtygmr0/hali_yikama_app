@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hali_yikama/common_widgets.dart';
+import 'package:hali_yikama/views/password_page.dart';
 import 'package:hali_yikama/views/signup_page.dart';
 
 class LoginPage extends StatelessWidget {
@@ -9,6 +10,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CommonWidgets(
       title: "Login here",
+      fontSize: 34,
       buttonText: "Login",
       fields: ["User", "Password"],
       onPressed: () {},
@@ -23,7 +25,12 @@ class LoginPage extends StatelessWidget {
       child: Align(
         alignment: Alignment.centerRight,
         child: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ForgotPassword()),
+            );
+          },
           child: _buildButtonText("Forgot your password?"),
         ),
       ),

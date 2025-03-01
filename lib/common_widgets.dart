@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 
 class CommonWidgets extends StatelessWidget {
   final String title;
+  final double fontSize;
   final String buttonText;
   final List<String> fields;
   final VoidCallback onPressed;
   final Widget? bottomWidget;
   final Widget? forgetPasswordWidget;
   final Widget? createAccountWidget;
+  final bool showIcons;
 
   const CommonWidgets({
     super.key,
@@ -18,6 +20,8 @@ class CommonWidgets extends StatelessWidget {
     this.bottomWidget,
     this.forgetPasswordWidget,
     this.createAccountWidget,
+    required this.fontSize,
+    this.showIcons = true,
   });
 
   final Color textFieldColor = const Color(0XFFF1F4FF);
@@ -34,7 +38,7 @@ class CommonWidgets extends StatelessWidget {
           padding: const EdgeInsets.only(top: 70),
           child: Column(
             children: [
-              buildTitle(title),
+              buildTitle(title, fontSize),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 25,
@@ -63,14 +67,14 @@ class CommonWidgets extends StatelessWidget {
     );
   }
 
-  Widget buildTitle(String title) {
+  Widget buildTitle(String title, double fontSize) {
     return SizedBox(
       width: double.infinity,
       child: Text(
         title,
         textAlign: TextAlign.center,
         style: TextStyle(
-          fontSize: 40,
+          fontSize: fontSize,
           fontWeight: FontWeight.bold,
           letterSpacing: 3.0,
           color: blueColor,
@@ -142,24 +146,26 @@ class CommonWidgets extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
-            text,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: blueColor,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
+          if (showIcons)
+            Text(
+              text,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: blueColor,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-          const SizedBox(height: 5),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              _buildIconContainer(googleIconImage),
-              const SizedBox(width: 15),
-              _buildIconContainer(appleIconImage),
-            ],
-          ),
+          if (showIcons) const SizedBox(height: 5),
+          if (showIcons)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                _buildIconContainer(googleIconImage),
+                const SizedBox(width: 15),
+                _buildIconContainer(appleIconImage),
+              ],
+            ),
         ],
       ),
     );

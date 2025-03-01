@@ -8,6 +8,7 @@ class SignupPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CommonWidgets(
       title: "Create Account",
+      fontSize: 34,
       buttonText: "Sign Up",
       fields: ["Name", "Email", "Password", "Confirm Password"],
       onPressed: () {},
