@@ -138,7 +138,7 @@ class CommonWidgets extends StatelessWidget {
 
   Widget buildOtherWays(String text) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 80),
+      padding: const EdgeInsets.symmetric(vertical: 60),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -151,13 +151,11 @@ class CommonWidgets extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 5),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               _buildIconContainer(googleIconImage),
-              const SizedBox(width: 15),
-              _buildIconContainer(facebookIconImage),
               const SizedBox(width: 15),
               _buildIconContainer(appleIconImage),
             ],

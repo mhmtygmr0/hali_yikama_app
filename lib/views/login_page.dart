@@ -10,7 +10,7 @@ class LoginPage extends StatelessWidget {
     return CommonWidgets(
       title: "Login here",
       buttonText: "Login",
-      fields: ["Email", "Password"],
+      fields: ["User", "Password"],
       onPressed: () {},
       forgetPasswordWidget: _buildForgotPassword(context),
       createAccountWidget: _buildCreateAccountButton(context),
