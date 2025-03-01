@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hali_yikama/common_widgets.dart';
-import 'package:hali_yikama/signup_page.dart';
+import 'package:hali_yikama/views/signup_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -12,12 +12,8 @@ class LoginPage extends StatelessWidget {
       buttonText: "Login",
       fields: ["Email", "Password"],
       onPressed: () {},
-      extraWidget: Column(
-        children: [
-          _buildForgotPassword(context),
-          _buildCreateAccountButton(context),
-        ],
-      ),
+      forgetPasswordWidget: _buildForgotPassword(context),
+      createAccountWidget: _buildCreateAccountButton(context),
     );
   }
 

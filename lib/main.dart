@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hali_yikama/login_page.dart';
+import 'package:hali_yikama/views/login_page.dart';
 
 void main() {
   runApp(const MyApp());

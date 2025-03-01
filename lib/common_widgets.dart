@@ -5,8 +5,9 @@ class CommonWidgets extends StatelessWidget {
   final String buttonText;
   final List<String> fields;
   final VoidCallback onPressed;
-  final Widget? extraWidget;
   final Widget? bottomWidget;
+  final Widget? forgetPasswordWidget;
+  final Widget? createAccountWidget;
 
   const CommonWidgets({
     super.key,
@@ -14,8 +15,9 @@ class CommonWidgets extends StatelessWidget {
     required this.buttonText,
     required this.fields,
     required this.onPressed,
-    this.extraWidget,
     this.bottomWidget,
+    this.forgetPasswordWidget,
+    this.createAccountWidget,
   });
 
   final Color textFieldColor = const Color(0XFFF1F4FF);
@@ -29,7 +31,7 @@ class CommonWidgets extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(top: 50),
+          padding: const EdgeInsets.only(top: 70),
           child: Column(
             children: [
               buildTitle(title),
@@ -46,8 +48,9 @@ class CommonWidgets extends StatelessWidget {
                         isPassword: field.toLowerCase().contains("password"),
                       ),
                     ),
-                    if (extraWidget != null) extraWidget!,
+                    if (forgetPasswordWidget != null) forgetPasswordWidget!,
                     buildElevatedButton(buttonText, onPressed),
+                    if (createAccountWidget != null) createAccountWidget!,
                     if (bottomWidget != null) bottomWidget!,
                     buildOtherWays("Or continue with"),
                   ],
@@ -107,7 +110,7 @@ class CommonWidgets extends StatelessWidget {
 
   Widget buildElevatedButton(String buttonText, VoidCallback onPressed) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20),
+      padding: const EdgeInsets.only(top: 40),
       child: SizedBox(
         width: double.infinity,
         height: 60,
@@ -144,7 +147,7 @@ class CommonWidgets extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               color: blueColor,
-              fontSize: 14,
+              fontSize: 16,
               fontWeight: FontWeight.bold,
             ),
           ),
