@@ -24,14 +24,7 @@ class LoginPage extends StatelessWidget {
         alignment: Alignment.centerRight,
         child: TextButton(
           onPressed: () {},
-          child: Text(
-            "Forgot your password?",
-            style: TextStyle(
-              color: CommonWidgets.blueColor,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          child: _buildButtonText("Forgot your password?"),
         ),
       ),
     );
@@ -47,14 +40,18 @@ class LoginPage extends StatelessWidget {
             MaterialPageRoute(builder: (context) => const SignupPage()),
           );
         },
-        child: Text(
-          "Create new account",
-          style: TextStyle(
-            color: CommonWidgets.blueColor,
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        child: _buildButtonText("Create new account"),
+      ),
+    );
+  }
+
+  Widget _buildButtonText(String text) {
+    return Text(
+      text,
+      style: TextStyle(
+        color: CommonWidgets.blueColor,
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
       ),
     );
   }
